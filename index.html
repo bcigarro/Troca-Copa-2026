@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f7a3f" />
+    <title>Troca Copa 2026</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/icon-192.svg" />
+    <style>
+      body { margin: 0; background: #f2f7f4; color: #172026; font-family: Arial, Helvetica, sans-serif; }
+      iframe { width: 100vw; height: 100dvh; border: 0; }
+    </style>
+  </head>
+  <body>
+    <iframe src="/preview.html" title="Troca Copa 2026"></iframe>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").catch(() => undefined);
+      }
+    </script>
+  </body>
+</html>
