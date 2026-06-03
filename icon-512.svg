@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Troca Copa 2026">
+  <rect width="512" height="512" rx="84" fill="#0f7a3f"/>
+  <path d="M64 342h384v106H64z" fill="#f5b942"/>
+  <circle cx="256" cy="218" r="112" fill="#fff"/>
+  <path d="M256 112l35 67 76 11-55 54 13 76-69-36-69 36 13-76-55-54 76-11z" fill="#172026"/>
+  <text x="256" y="416" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#172026">2026</text>
+</svg>
