@@ -1,4 +1,4 @@
-const CACHE_NAME = "troca-copa-2026-static-v2";
+const CACHE_NAME = "troca-copa-2026-static-v3";
 const APP_SHELL = ["/", "/preview.html", "/manifest.json", "/icon-192.svg", "/icon-512.svg", "/sw.js"];
 
 self.addEventListener("install", (event) => {
@@ -7,12 +7,17 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("activate", (event) => {
-  event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))));
+  event.waitUntil(
+    caches
+      .keys()
+      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))),
+  );
   self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+
   event.respondWith(
     fetch(event.request)
       .then((response) => {
@@ -20,6 +25,8 @@ self.addEventListener("fetch", (event) => {
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
         return response;
       })
-      .catch(async () => (await caches.match(event.request)) || caches.match("/")),
+      .catch(async () => {
+        return (await caches.match(event.request)) || caches.match("/");
+      }),
   );
 });
