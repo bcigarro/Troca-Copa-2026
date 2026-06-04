@@ -1,4 +1,4 @@
-const CACHE_NAME = "troca-copa-2026-static-v4";
+const CACHE_NAME = "troca-copa-2026-static-v5";
 const APP_SHELL = ["/", "/preview.html", "/manifest.json", "/icon-192.svg", "/icon-512.svg", "/sw.js"];
 
 self.addEventListener("install", (event) => {
